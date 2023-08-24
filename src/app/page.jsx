@@ -1,3 +1,12 @@
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 export default function Home() {
-  return <h1 className="ml-3 font-popuca text-4xl">Inner Champion Quest</h1>;
+  return (
+    <>
+      <Header />
+      <main>
+        <Hero />
+      </main>
+    </>
+  );
 }
