@@ -8,6 +8,7 @@ function Header() {
         width={256}
         height={256}
         src={logoText}
+        placeholder="blur"
         priority={true}
         className="w-16 xs:w-20 sm:w-24 xl:w-28"
       ></Image>

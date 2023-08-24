@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { useState } from "react";
+
+import newsletterMan from "../../../public/newsletter_man.jpg";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -31,6 +34,7 @@ function PopupButton({ handleClick }) {
         alt="Newsletter popup button"
         src="/icons8-free.svg"
         width={64}
+        priority={true}
         height={64}
         className="h-[75%] w-[75%] "
       ></Image>
@@ -63,8 +67,10 @@ function PopoupWindow({ closePopup }) {
       <div className="relative h-[60%] min-h-[150px] w-full  overflow-hidden rounded-t-xl">
         <Image
           alt="Newsletter popup button"
-          src="/newsletter_man.jpg"
+          src={newsletterMan}
           fill
+          priority={true}
+          placeholder="blur"
           style={{
             objectFit: "cover",
           }}
@@ -80,11 +86,7 @@ function PopoupWindow({ closePopup }) {
           action=""
           className="flex flex-col gap-4 font-popuca"
         >
-          <label
-            className="text-2xl"
-            htmlFor="email-stealer"
-            className="text-zinc-900"
-          >
+          <label className="text-2xl text-zinc-900" htmlFor="email-stealer">
             Join our action driven comunity
           </label>
           <div className="flex flex-col gap-2">
