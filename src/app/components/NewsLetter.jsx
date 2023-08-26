@@ -1,32 +1,51 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 
 import newsletterMan from "../../../public/newsletter_man.jpg";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
+import { motion, AnimatePresence } from "framer-motion";
+
+let wasOpened = false;
+
 export default function NewsLetter() {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (wasOpened) return;
+      setIsOpen(true);
+    }, 2000);
+  }, []);
+
   function handleClick() {
     setIsOpen((actual) => !actual);
+    wasOpened = true;
   }
 
   return (
-    <div className="fixed bottom-5 right-0 mt-20 flex flex-col-reverse items-end justify-end gap-4 pr-4">
+    <div className="fixed bottom-5 right-0 flex flex-col-reverse items-end justify-end gap-4 pr-4">
       <PopupButton handleClick={handleClick} />
-      {isOpen && <PopoupWindow closePopup={handleClick} />}
+      {
+        <AnimatePresence>
+          {isOpen && <PopoupWindow closePopup={handleClick} />}
+        </AnimatePresence>
+      }
     </div>
   );
 }
 
 function PopupButton({ handleClick }) {
   return (
-    <button
+    <motion.button
       type="button"
+      layout
+      whileTap={{ scale: 0.8 }}
       onClick={handleClick}
       className=" flex h-12 w-12 items-center justify-center rounded-[50%] bg-accentRed lg:h-14 lg:w-14"
     >
@@ -38,7 +57,7 @@ function PopupButton({ handleClick }) {
         height={64}
         className="h-[75%] w-[75%] "
       ></Image>
-    </button>
+    </motion.button>
   );
 }
 
@@ -63,8 +82,25 @@ function PopoupWindow({ closePopup }) {
   }
 
   return (
-    <div className="relative mr-2 flex h-[60vh] max-h-[500px] min-h-[160px] w-[70vw] max-w-sm flex-col overflow-y-auto rounded-xl">
-      <div className="relative h-[60%] min-h-[150px] w-full  overflow-hidden rounded-t-xl">
+    <motion.div
+      key="modal"
+      initial={{
+        y: 20,
+        opacity: 0,
+        scaleY: 0,
+        transformOrigin: "bottom",
+      }}
+      transition={{
+        duration: 0.3,
+        type: "spring",
+        damping: 14,
+        stiffness: 150,
+      }}
+      animate={{ y: 0, opacity: 1, scaleY: 1 }}
+      exit={{ y: 20, opacity: 0, scaleY: 0 }}
+      className="relative mr-2 flex h-[60vh] max-h-[500px] min-h-[160px] w-[70vw] max-w-sm flex-col overflow-y-auto rounded-xl"
+    >
+      <div className="relative h-[60%] min-h-[150px] w-full overflow-hidden rounded-t-xl">
         <Image
           alt="Newsletter popup button"
           src={newsletterMan}
@@ -113,6 +149,6 @@ function PopoupWindow({ closePopup }) {
           </Button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }

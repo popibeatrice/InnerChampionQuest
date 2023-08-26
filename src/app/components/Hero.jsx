@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <div className="mx-6 mt-[20vh] flex animate-fade-in flex-col items-start justify-start gap-3 xs:mx-14 sm:mx-16 md:mx-20 xl:mx-36 2xl:mx-40">
+    <div className="relative mx-6 mt-[20vh] flex translate-y-[100px] animate-fade-in flex-col items-start justify-start gap-3 opacity-0 delay-300 xs:mx-14 sm:mx-16 md:mx-20 xl:mx-36 2xl:mx-40">
       <h1 className="text-3xl xxs:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl">
         Unleash &nbsp;&nbsp;
         <span className="font-heydex text-4xl text-accentRed xxs:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl">
