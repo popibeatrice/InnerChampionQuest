@@ -29,7 +29,7 @@ export default function NewsLetter() {
   }
 
   return (
-    <div className="fixed bottom-5 right-0 flex flex-col-reverse items-end justify-end gap-4 pr-4">
+    <div className="fixed bottom-5 right-0 z-30 flex flex-col-reverse items-end justify-end gap-4 pr-4">
       <PopupButton handleClick={handleClick} />
       {
         <AnimatePresence>
@@ -122,8 +122,11 @@ function PopoupWindow({ closePopup }) {
           action=""
           className="flex flex-col gap-4 font-popuca"
         >
-          <label className="text-2xl text-zinc-900" htmlFor="email-stealer">
-            Join our action driven comunity
+          <label
+            className="text-lg text-zinc-900 xl:text-xl"
+            htmlFor="email-stealer"
+          >
+            Join our action driven comunity.
           </label>
           <div className="flex flex-col gap-2">
             <Input

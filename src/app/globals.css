@@ -74,3 +74,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+.cta {
+  display: flex;
+  padding: 10px 45px;
+  transition: 1s !important;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg) !important;
+}
+
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  transition: 0.5s !important;
+  box-shadow: 10px 10px 0 #e0284f;
+  padding: 10px 65px;
+}
+
+.cta span {
+  transform: skewX(15deg) !important;
+}

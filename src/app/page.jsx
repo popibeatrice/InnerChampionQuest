@@ -1,15 +1,16 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import NewsLetter from "./components/NewsLetter";
-
+import HookSec from "./components/HookSec";
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
+    <main>
+      <div className="min-h-screen">
+        <Header />
         <Hero />
-        <NewsLetter />
-      </main>
-    </>
+      </div>
+      <NewsLetter />
+      <HookSec />
+    </main>
   );
 }
