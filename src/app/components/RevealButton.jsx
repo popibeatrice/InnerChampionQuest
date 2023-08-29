@@ -10,14 +10,13 @@ function RevealButton({ children }) {
   const isInView = useInView(ref, {
     once: true,
     amount: 0.4,
-    margin: "0px 300px 100px 300px",
   });
 
   return (
     <div
       ref={ref}
       style={{
-        transform: isInView ? "none" : "translateY(200px)",
+        transform: isInView ? "none" : "translateY(5vh)",
         opacity: isInView ? 1 : 0,
         transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
       }}

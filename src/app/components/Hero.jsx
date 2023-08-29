@@ -7,12 +7,13 @@ function Hero() {
           <span className="font-heydex text-4xl text-accentRed xxs:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl">
             your
           </span>
-          &nbsp;&nbsp; true{" "}
-          <span className="whitespace-nowrap">potential now</span>
+          &nbsp;&nbsp; true <span className="whitespace-nowrap">potential</span>
         </h1>
         <p className="max-w-[200px] font-popuca text-sm text-gray-400 xxs:max-w-[240px] xs:max-w-[300px] xs:text-base sm:max-w-sm sm:text-lg md:max-w-md xl:text-xl 2xl:max-w-xl">
-          The <span className="font-bold uppercase text-white">only</span>{" "}
-          program designed to truly help you improve each aspect of your life.
+          The <span className="font-bold text-white">only</span> program
+          designed to truly help you improve each aspect of your life. The{" "}
+          <span className="font-bold text-white">unfair advantage</span> that
+          will set you apart from the rest.
         </p>
       </div>
     </section>

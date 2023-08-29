@@ -96,3 +96,27 @@
 .cta span {
   transform: skewX(15deg) !important;
 }
+
+.bgParalax {
+  background:
+  /* top, transparent black, faked with gradient */
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    /* bottom, image */ url("../../public/cavaler_mobile.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+@media (min-width: 768px) {
+  .bgParalax {
+    background:
+    /* top, transparent black, faked with gradient */
+      linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      /* bottom, image */ url("../../public/cavaler.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+  }
+}

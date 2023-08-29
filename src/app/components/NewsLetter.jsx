@@ -20,7 +20,7 @@ export default function NewsLetter() {
     setTimeout(() => {
       if (wasOpened) return;
       setIsOpen(true);
-    }, 2000);
+    }, 3000);
   }, []);
 
   function handleClick() {
@@ -98,9 +98,9 @@ function PopoupWindow({ closePopup }) {
       }}
       animate={{ y: 0, opacity: 1, scaleY: 1 }}
       exit={{ y: 20, opacity: 0, scaleY: 0 }}
-      className="relative mr-2 flex h-[60vh] max-h-[500px] min-h-[160px] w-[70vw] max-w-sm flex-col overflow-y-auto rounded-xl"
+      className="relative mr-2 flex h-[65vh] max-h-[600px] min-h-[175px] w-[70vw] max-w-sm flex-col overflow-y-auto rounded-xl"
     >
-      <div className="relative h-[60%] min-h-[150px] w-full overflow-hidden rounded-t-xl">
+      <div className="relative h-[60%] min-h-[175px] w-full overflow-hidden rounded-t-xl">
         <Image
           alt="Newsletter popup button"
           src={newsletterMan}
@@ -112,7 +112,7 @@ function PopoupWindow({ closePopup }) {
           }}
           className="object-top"
         ></Image>
-        <h3 className="absolute bottom-5 right-0 z-10 w-[90%] max-w-[220px] rounded bg-zinc-900 bg-opacity-80 p-2 text-end text-3xl xs:w-[80%] lg:text-4xl ">
+        <h3 className="absolute bottom-5 right-0 z-10 w-[90%] max-w-[220px] rounded bg-zinc-900 bg-opacity-90 p-2 text-end text-3xl xs:w-[80%] lg:text-4xl ">
           Get a free chapter now
         </h3>
       </div>
