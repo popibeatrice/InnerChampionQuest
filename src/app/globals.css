@@ -97,6 +97,13 @@
   transform: skewX(15deg) !important;
 }
 
+.line {
+  width: 100%;
+  opacity: 1;
+  background-image: radial-gradient(circle, #fff 23%, #000);
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
 .bgParalax {
   background:
   /* top, transparent black, faked with gradient */

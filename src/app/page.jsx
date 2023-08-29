@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import NewsLetter from "./components/NewsLetter";
 import HookSec from "./components/HookSec";
 import FeaturesSec from "./components/FeaturesSec";
+import ContentSec from "./components/ContentSec";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <NewsLetter />
       <HookSec />
       <FeaturesSec />
+      <ContentSec />
     </main>
   );
 }
