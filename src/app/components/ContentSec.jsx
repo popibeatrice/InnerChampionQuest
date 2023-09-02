@@ -1,33 +1,33 @@
 import PhaseComponent from "./PhaseComponent";
 import SectionLine from "./SectionLine";
 import PhasePoint from "./PhasePoint";
+import BuyButton from "./BuyButton";
 
 function ContentSec() {
   return (
     <section className="min-h-screen overflow-hidden">
       <SectionLine />
-      <div className="flex grow-0 flex-col items-center gap-24 pb-40 pt-20">
+      <div className="flex grow-0 flex-col items-center gap-16 pb-40 pt-20">
         <h2 className="font-heydex text-3xl xxs:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl">
           The Champion Arch
         </h2>
-        <div className="grid w-full grow grid-cols-1 justify-items-center gap-20 xl:grid-cols-3">
+        <div className="grid w-full grow grid-cols-1 justify-items-center gap-20 xl:grid-cols-3 xl:gap-8 xl:px-5 2xl:gap-10">
           <PhaseComponent
             phaseName={"Finding the quest"}
             key={1}
             phaseNr={"one"}
           >
-            <PhasePoint descp="Understanding the program" name="First Step" />
+            <PhasePoint descp="Understanding the program." name="First Step" />
             <PhasePoint
-              descp="Specific Questions That Will Help Discover Your Interests"
+              descp="Specific questions that will help you discover your interests."
               name="Finding your quest"
             />
             <PhasePoint
-              descp="Teaching How To ACTUALLY Learn ( 90% were failed by the education system )"
+              descp="How to ACTUALLY learn ( 90% were failed by the education system )."
               name="Rewiring your brain"
             />
             <PhasePoint
-              descp="Highlighted The Common Mistakes And How To Overcome Them
-              "
+              descp="Highlighting the common mistakes and how to overcome them."
               name="Common Pitfalls"
             />
           </PhaseComponent>
@@ -37,19 +37,19 @@ function ContentSec() {
             phaseNr={"two"}
           >
             <PhasePoint
-              descp="Optimizing Your Brain Performance, Mood, and Health"
+              descp="Optimizing your brain performance, mood, and health."
               name="Sleep"
             />
             <PhasePoint
-              descp="Retrieving the Full Potential of Your Mind"
+              descp="Retrieving the full potential of your mind."
               name="Reversing The Brainwash"
             />
             <PhasePoint
-              descp="Maximizing Muscle Mass and The Side Effects On Your Mental"
+              descp="Maximizing muscle mass and the benefits for your mental strength."
               name="Training"
             />
             <PhasePoint
-              descp="Fueling The Energy To Embark On Your Quest"
+              descp="Fueling the energy to embark on your quest."
               name="Nutrition"
             />
           </PhaseComponent>
@@ -59,19 +59,20 @@ function ContentSec() {
             phaseNr={"three"}
           >
             <PhasePoint
-              descp="Fulfilling Your Financial Goals"
+              descp="Fulfilling your financial Goals."
               name="High-Income Skill"
             />
             <PhasePoint
-              descp="Mastering the Right Way of Thinking"
+              descp="Mastering the right way of thinking."
               name="Developing the Right Mindset"
             />
             <PhasePoint
-              descp="Gain Respect of Man and Adoration of Woman"
+              descp="Gain respect of man and adoration of woman."
               name="Become a Leader"
             />
           </PhaseComponent>
         </div>
+        <BuyButton>Take Action</BuyButton>
       </div>
     </section>
   );
