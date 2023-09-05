@@ -83,9 +83,11 @@ function PopoupWindow({ closePopup }) {
       const res = await axios.post("/api/newsletter", {
         email,
       });
+      console.log(res);
       setError("");
       closePopup();
     } catch (err) {
+      console.log(err);
       setError(err.response.data);
     } finally {
       setIsLoading(false);

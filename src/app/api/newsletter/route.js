@@ -1,7 +1,10 @@
+// imports
 import connectDB from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 import Newsletter from "@/app/models/newsletter";
+import { emailHandler } from "../handlers/emailHandler";
 
+// look for the email in the db
 async function isEmailInDatabase(email) {
   try {
     const existingSubscriber = await Newsletter.findOne({ email });
@@ -18,8 +21,20 @@ export async function POST(req) {
     await connectDB();
     const verifyExistence = await isEmailInDatabase(email);
     if (!verifyExistence) {
-      await Newsletter.create({ email, buyer: false, subscribed: true });
-      return NextResponse.json("Everything was successfull");
+      try {
+        await Promise.all([
+          emailHandler(email),
+          Newsletter.create({ email, buyer: false, subscribed: true }),
+        ]);
+        console.log("Everything was successfull");
+        return NextResponse.json("Everything was successfull");
+      } catch (err) {
+        console.log("err mailgun", err);
+        return NextResponse.json(
+          "An error occured while trying to send your chapter",
+          { status: 400 },
+        );
+      }
     }
     return NextResponse.json("Email already used", { status: 400 });
   } catch (err) {
