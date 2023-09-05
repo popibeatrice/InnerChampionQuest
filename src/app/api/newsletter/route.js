@@ -22,23 +22,28 @@ export async function POST(req) {
     const verifyExistence = await isEmailInDatabase(email);
     if (!verifyExistence) {
       try {
-        await Promise.all([
-          emailHandler(email),
-          Newsletter.create({ email, buyer: false, subscribed: true }),
-        ]);
-        console.log("Everything was successfull");
-        return NextResponse.json("Everything was successfull");
-      } catch (err) {
-        console.log("err mailgun", err);
+        await Newsletter.create({
+          email,
+          buyer: false,
+          subscribed: true,
+        });
+      } catch (error) {
+        return NextResponse.json(error.errors.email.message, { status: 400 });
+      }
+      try {
+        await emailHandler(email);
+      } catch (error) {
         return NextResponse.json(
           "An error occured while trying to send your chapter",
           { status: 400 },
         );
       }
+      console.log("Everything was successfull");
+      return NextResponse.json("Everything was successfull");
     }
     return NextResponse.json("Email already used", { status: 400 });
   } catch (err) {
-    console.log(err.errors.email.message);
-    return NextResponse.json(err.errors.email.message, { status: 400 });
+    console.log(err);
+    return NextResponse.json("Something went wrong", { status: 400 });
   }
 }
