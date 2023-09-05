@@ -4,6 +4,7 @@ import NewsLetter from "./components/NewsLetter";
 import HookSec from "./components/HookSec";
 import FeaturesSec from "./components/FeaturesSec";
 import ContentSec from "./components/ContentSec";
+import BuySec from "./components/BuySec";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <HookSec />
       <FeaturesSec />
       <ContentSec />
+      <BuySec />
     </main>
   );
 }

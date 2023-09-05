@@ -41,22 +41,23 @@ function HookSec() {
             Imagine actually making real progress as an entrepreneur.
           </PainPoint>
           <PainPoint>
-            Imagine putting yourself in the skin of a{" "}
+            Imagine putting yourself in the shoes of a{" "}
             <span className="text-accentBlue">high value man</span> . Your
             actions command respect from men and admiration in the eyes of
             women.
           </PainPoint>
           <PainPoint dir="10vw">
-            I was blessed with a lot of challenges and the power to overpass
+            I was blessed with a lot of challenges and the power to overcome
             them. Every trial was a{" "}
             <span className="text-accentBlue">life-changing</span> experience
-            and after years of hard work, I’ve finally been able to become proud
-            of myself and experience the highs of life. <br /> I know that you
-            are somewhat like me, otherwise you wouldn’t be here. You want to
-            change and overcome your{" "}
+            and after{" "}
+            <span className="text-accentBlue">years of hard work</span>, I’ve
+            finally been able to become proud of myself and experience the highs
+            of life. <br /> I know that you are somewhat like me, otherwise you
+            wouldn’t be here. You want to change and overcome your{" "}
             <span className="text-accentRed">weaknesses</span>.
           </PainPoint>
-          <PainPoint>You just don’t know how yet.</PainPoint>
+          <PainPoint>You just don’t know how to do it yet.</PainPoint>
           <PainPoint dir="10vw">
             Luckly, you just found{" "}
             <span className="text-accentBlue">everything</span> you were

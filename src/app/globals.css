@@ -83,14 +83,12 @@
   transform: skewX(-15deg) !important;
 }
 
-.cta:focus {
-  outline: none;
-}
-
-.cta:hover {
-  transition: 0.5s !important;
-  box-shadow: 10px 10px 0 #e0284f;
-  padding: 10px 65px;
+@media (min-width: 1024px) {
+  .cta:hover {
+    transition: 0.5s !important;
+    box-shadow: 10px 10px 0 #e0284f;
+    padding: 10px 65px;
+  }
 }
 
 .cta span {
@@ -109,6 +107,25 @@
   /* top, transparent black, faked with gradient */
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     /* bottom, image */ url("../../public/cavaler_mobile.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+.winner {
+  background: url("../../public/PrinceTiny.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+.loser {
+  background:
+  /* top, transparent black, faked with gradient */
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    /* bottom, image */ url("../../public/poor.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

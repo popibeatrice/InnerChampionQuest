@@ -11,7 +11,7 @@ function ContentSec() {
         <h2 className="font-heydex text-3xl xxs:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl">
           The Champion Arch
         </h2>
-        <div className="grid w-full grow grid-cols-1 justify-items-center gap-20 xl:grid-cols-3 xl:gap-8 xl:px-5 2xl:gap-10">
+        <div className="grid w-full grow grid-cols-1 place-content-center justify-items-center gap-20 xl:grid-cols-3 xl:gap-8 xl:px-5 2xl:gap-10">
           <PhaseComponent
             phaseName={"Finding the quest"}
             key={1}
