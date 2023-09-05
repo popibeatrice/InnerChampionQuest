@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button";
 
 import { motion, AnimatePresence } from "framer-motion";
 
+import axios from "axios";
+
 let wasOpened = false;
 
 export default function NewsLetter() {
@@ -64,21 +66,33 @@ function PopupButton({ handleClick }) {
 function PopoupWindow({ closePopup }) {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   function HandleChange(e) {
     setEmail(e.target.value);
   }
 
-  function HandleSubmit(e) {
+  async function HandleSubmit(e) {
     e.preventDefault();
     if (email === "") {
       setError("please fill out the email input");
       return;
     }
-    console.log(email);
-    setEmail("");
-    setError("");
-    closePopup();
+    try {
+      setIsLoading(true);
+      const res = await axios.post("/api/newsletter", {
+        email,
+      });
+      console.log(res);
+      setError("");
+      closePopup();
+    } catch (err) {
+      console.log(err);
+      setError(err.response.data);
+    } finally {
+      setIsLoading(false);
+      setEmail("");
+    }
   }
 
   return (
@@ -147,7 +161,10 @@ function PopoupWindow({ closePopup }) {
             )}
           </div>
 
-          <Button className="duration-300 hover:bg-accentBlue focus-visible:bg-accentBlue focus-visible:ring-0 sm:text-xl">
+          <Button
+            disabled={isLoading}
+            className="duration-300 hover:bg-accentBlue focus-visible:bg-accentBlue focus-visible:ring-0 sm:text-xl"
+          >
             JOIN NOW
           </Button>
         </form>
