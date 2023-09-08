@@ -19,7 +19,7 @@ async function emailHandler(email) {
     to: email,
     from: "InnerChampionQuest <no-reply@InnerChampionQuest.io>",
     subject: "Buna dimineata!",
-    text: "Capitol din curs",
+    template: "innerchampionquest",
   };
   try {
     const res = await client.messages.create(
