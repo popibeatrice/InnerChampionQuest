@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import {
   PaymentElement,
   LinkAuthenticationElement,
@@ -81,28 +82,40 @@ export default function PaymentForm() {
   };
 
   const paymentElementOptions = {
-    layout: "tabs",
+    layout: "accordion",
   };
 
   return (
-    <div>
-      <form id="payment-form" onSubmit={handleSubmit}>
+    <div className="w-10/12 max-w-3xl rounded-xl bg-zinc-800 p-6 font-popuca font-bold">
+      <form
+        id="payment-form"
+        className="flex flex-col gap-5"
+        onSubmit={handleSubmit}
+      >
         <LinkAuthenticationElement
           id="link-authentication-element"
           onChange={(e) => setEmail(e.value.email)}
         />
+        <p className="font-normal text-accentBlue">
+          This email will be used to receive the course!
+        </p>
         <PaymentElement id="payment-element" options={paymentElementOptions} />
-        <button disabled={isLoading || !stripe || !elements} id="submit">
-          <span id="button-text">
-            {isLoading ? (
-              <div className="spinner" id="spinner"></div>
-            ) : (
-              "Pay now"
-            )}
-          </span>
+        <button
+          className={`rounded-md bg-accentBlue p-2 text-center disabled:opacity-80`}
+          disabled={isLoading || !stripe || !elements}
+          id="submit"
+        >
+          <span id="button-text">Pay now</span>
         </button>
         {/* Show any error or success messages */}
-        {message && <div id="payment-message">{message}</div>}
+        {message && (
+          <div
+            className="text-center font-normal text-zinc-400"
+            id="payment-message"
+          >
+            {message}
+          </div>
+        )}
       </form>
     </div>
   );

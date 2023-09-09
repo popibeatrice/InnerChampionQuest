@@ -5,6 +5,8 @@ import HookSec from "./components/HookSec";
 import FeaturesSec from "./components/FeaturesSec";
 import ContentSec from "./components/ContentSec";
 import BuySec from "./components/BuySec";
+import TestSec from "./components/TestSec";
+import Questions from "./components/Questions";
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
       <FeaturesSec />
       <ContentSec />
       <BuySec />
+      <TestSec />
+      <Questions />
     </main>
   );
 }

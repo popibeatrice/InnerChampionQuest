@@ -7,8 +7,8 @@ function PainPoint({ children, dir = "-20vw", accent = "#ffffff" }) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    amount: 0.5,
-    margin: "0px 300px -20% 300px",
+    amount: 0.3,
+    margin: "0px 300px -10% 300px",
   });
   return (
     <div
