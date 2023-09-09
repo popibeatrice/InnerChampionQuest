@@ -103,10 +103,8 @@
 }
 
 .bgParalax {
-  background:
-  /* top, transparent black, faked with gradient */
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    /* bottom, image */ url("../../public/cavaler_mobile.webp");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../public/cavaler_mobile.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -122,10 +120,8 @@
 }
 
 .loser {
-  background:
-  /* top, transparent black, faked with gradient */
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    /* bottom, image */ url("../../public/poor.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../public/poor.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -134,10 +130,8 @@
 
 @media (min-width: 768px) {
   .bgParalax {
-    background:
-    /* top, transparent black, faked with gradient */
-      linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      /* bottom, image */ url("../../public/cavaler.webp");
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../../public/cavaler.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

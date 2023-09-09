@@ -6,7 +6,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm";
 
 const stripePromise = loadStripe(
-  "pk_test_51NeyxBAdnAb9actWfTCP1tZckmwhNlYnZpjhe2ryRwl1efHPqTTIGImP75HCVkwLXiwv4ChhbeIWFjVTeBLKVLLp00jZzOUfZJ",
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
 );
 
 export default function PaymentPage() {
@@ -17,14 +17,18 @@ export default function PaymentPage() {
     fetch("/api/paymentIntent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ paymentMethodType: "card", currency: "usd" }),
+      body: JSON.stringify({}),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, []);
 
   const appearance = {
-    theme: "stripe",
+    theme: "night",
+    variables: {
+      colorPrimary: "#009EE1",
+      colorBackground: "#27272a",
+    },
   };
   const options = {
     clientSecret,
@@ -32,7 +36,10 @@ export default function PaymentPage() {
   };
 
   return (
-    <div className="App">
+    <div className="App flex min-h-screen flex-col items-center justify-start gap-14 py-14   lg:gap-20 lg:py-20">
+      <h1 className="font-heydex text-4xl xxs:text-5xl sm:text-6xl lg:text-7xl">
+        The <span className="text-accentBlue">big</span> step
+      </h1>
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <PaymentForm />

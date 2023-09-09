@@ -3,11 +3,10 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
-    const { paymentMethodType, currency } = await req.json();
     const paymentIntent = await stripe.paymentIntents.create({
       amount: 4999,
-      currency: currency,
-      paymentMethodType: [paymentMethodType],
+      currency: "usd",
+      payment_method_types: ["card"],
     });
     return NextResponse.json({ clientSecret: paymentIntent.client_secret });
   } catch (err) {
