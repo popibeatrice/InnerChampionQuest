@@ -6,7 +6,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import PaymentForm from "./PaymentForm";
 
 const stripePromise = loadStripe(
-  "pk_test_51NeyxBAdnAb9actWfTCP1tZckmwhNlYnZpjhe2ryRwl1efHPqTTIGImP75HCVkwLXiwv4ChhbeIWFjVTeBLKVLLp00jZzOUfZJ",
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
 );
 
 export default function PaymentPage() {
@@ -17,14 +17,13 @@ export default function PaymentPage() {
     fetch("/api/paymentIntent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ paymentMethodType: "card", currency: "usd" }),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, []);
 
   const appearance = {
-    theme: "stripe",
+    theme: "night",
   };
   const options = {
     clientSecret,
